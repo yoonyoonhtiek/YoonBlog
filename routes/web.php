@@ -21,7 +21,7 @@ use App\Http\Controllers\CommentController;
 // });
 
 Route::get('/', [ArticleController::class, 'index']);
-Route::get('/articles',[ArticleController::class,'index']);
+Route::get('/articles',[ArticleController::class,'index'])->name('index');
 
 Route::get('/articles/detail/{id}',[ArticleController::class,'detail']);
 Route::get('/articles/delete/{id}',[ArticleController::class,'delete']);

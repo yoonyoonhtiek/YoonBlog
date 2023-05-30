@@ -25,6 +25,11 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
+        $user=auth()->user();
+        Gate::define('comment-delete',function($user,$comment){
+            return $user->id==$comment->user_id;
+
+        });
         Paginator::useBootstrap();
 
         //

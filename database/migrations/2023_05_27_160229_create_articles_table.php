@@ -18,7 +18,14 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->integer('category_id');
+           $table->foreignId(column:"user_id")->constrained( )->cascadeOnDelete();
             $table->timestamps();
+        
+
+
+
+            // $table->foreignId(column:"user_id")->constrained( )->cascadeOnDelete();//to increase simutaneously their function
+           
         });
     }
 
